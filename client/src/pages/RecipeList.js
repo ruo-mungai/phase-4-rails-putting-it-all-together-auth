@@ -8,7 +8,7 @@ function RecipeList() {
   const [recipes, setRecipes] = useState([]);
 
   useEffect(() => {
-    fetch("/recipes")
+    fetch("http://127.0.0.1:3000/photos")
       .then((r) => r.json())
       .then(setRecipes);
   }, []);
@@ -19,13 +19,13 @@ function RecipeList() {
         recipes.map((recipe) => (
           <Recipe key={recipe.id}>
             <Box>
-              <h2>{recipe.title}</h2>
-              <p>
+              <h2>{recipe.name}</h2>
+              {/* <p>
                 <em>Time to Complete: {recipe.minutes_to_complete} minutes</em>
                 &nbsp;·&nbsp;
                 <cite>By {recipe.user.username}</cite>
               </p>
-              <ReactMarkdown>{recipe.instructions}</ReactMarkdown>
+              <ReactMarkdown>{recipe.instructions}</ReactMarkdown> */}
             </Box>
           </Recipe>
         ))
